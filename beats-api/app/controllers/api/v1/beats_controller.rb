@@ -1,4 +1,4 @@
-class BeatsController < ApplicationController
+class Api::V1::BeatsController < ApplicationController
     before_action :find_beat, only: [:show, :update, :destroy]
     def index 
         beats = Beat.all 

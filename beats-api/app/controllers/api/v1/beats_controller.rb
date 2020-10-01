@@ -10,16 +10,20 @@ class Api::V1::BeatsController < ApplicationController
     end
 
     def create
+        beat = Beat.create(beat_params)
 
+        render json: beat
     end
 
     def update
+        beat.update!(beat_params)
 
+        render json: beat
     end
 
-    def destroy
+    # def destroy
 
-    end
+    # end
 
     private
 
@@ -28,7 +32,7 @@ class Api::V1::BeatsController < ApplicationController
     end
 
     def find_beat
-        @beat= Beat.find(params[:id])
+        beat= Beat.find(params[:id])
     end
 
 end
